@@ -15,6 +15,15 @@ class MainActivity : AppCompatActivity() {
             val myIntent = Intent(this,OtherActivity::class.java) //티켓발권
             startActivity(myIntent) //티켓을 들고 실제 비행기에 탑승
         }
+//        메세지 전달 버튼이 눌리면
+        sendMessageBtn.setOnClickListener {
 
+            val inputMessage = messageEdt.text.toString()
+            val myIntent = Intent(this,MessageActivity::class.java)
+
+            myIntent.putExtra("message",inputMessage)
+
+            startActivity(myIntent)
+        }
     }
 }
